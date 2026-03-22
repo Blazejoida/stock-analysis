@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"pl.polsl.entity"},{"l":"pl.polsl.model"},{"l":"pl.polsl.servlet"},{"l":"pl.polsl.view"}];updateSearchResults();

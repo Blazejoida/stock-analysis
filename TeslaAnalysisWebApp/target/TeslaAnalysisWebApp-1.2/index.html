@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tesla Stock Analysis - Main Form</title>
+</head>
+<body>
+    <h1>Tesla Stock Analysis Application</h1>
+    <h2>Perform Analysis</h2>
+    
+    <form action="AnalysisServlet" method="post">
+        <table>
+            <tr>
+                <td><label for="filePath">File Path:</label></td>
+                <td>
+                    <input type="text" 
+                           id="filePath" 
+                           name="filePath" 
+                           size="50" 
+                           placeholder="e.g., C:/data/tesla_stock.csv"
+                           required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="analysisType">Analysis Type:</label></td>
+                <td>
+                    <select id="analysisType" name="analysisType" required>
+                        <option value="">-- Select Analysis Type --</option>
+                        <option value="HIGHEST_VOLUME_DAY">Highest Volume Day</option>
+                        <option value="HIGHEST_VOLUME_YEAR">Highest Volume Year</option>
+                        <option value="PRICE_SORTING">Price Sorting</option>
+                        <option value="PRICE_VOLUME_CORRELATION">Price-Volume Correlation</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Perform Analysis">
+                    <input type="reset" value="Clear Form">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <hr>
+    
+    <h3>Analysis Types Description:</h3>
+    <ul>
+        <li><strong>Highest Volume Day:</strong> Finds the day with the highest trading volume</li>
+        <li><strong>Highest Volume Year:</strong> Finds the year with the highest total trading volume</li>
+        <li><strong>Price Sorting:</strong> Sorts stock data by closing price in ascending order</li>
+        <li><strong>Price-Volume Correlation:</strong> Calculates Pearson correlation between opening price and volume</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>Navigation:</h3>
+    <form action="HistoryServlet" method="get">
+        <input type="submit" value="View Analysis History">
+    </form>
+    
+    <hr>
+    
+    <h3>Instructions:</h3>
+    <ol>
+        <li><strong>Enter file path:</strong> Type the full path to your CSV file containing Tesla stock data in the "File Path" field (e.g., C:/data/tesla_stock.csv)</li>
+        <li><strong>Select analysis type:</strong> Choose one of the four available analysis types from the dropdown menu</li>
+        <li><strong>Submit:</strong> Click "Perform Analysis" to execute the analysis and save results to database</li>
+        <li><strong>View history:</strong> Click "View Analysis History" to see all past analyses from database and cookie information</li>
+    </ol>
+    
+    <h3>What you'll see:</h3>
+    <ul>
+        <li><strong>[FROM COOKIE]</strong> - Information stored in your browser cookies (session data, analysis count)</li>
+        <li><strong>[FROM DATABASE]</strong> - Information stored permanently in the database (all analysis operations)</li>
+        <li><strong>[IN MEMORY]</strong> - Information stored temporarily in application memory (current loaded data)</li>
+    </ul>
+    
+    <p><em>Note: The CSV file should contain columns: Date, Open, High, Low, Close, Adj Close, Volume</em></p>
+</body>
+</html>
