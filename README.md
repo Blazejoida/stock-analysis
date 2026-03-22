@@ -84,4 +84,4 @@ OPERATION_ID    BIGINT          FOREIGN KEY → ANALYSIS_OPERATIONS(ID)
 ## 5. Viewing Documentation
 Open the generated documentation:
 
-target/site/apidocs/index.html
+[dokumentacja](TeslaAnalysisWebApp/target/reports/apidocs)
